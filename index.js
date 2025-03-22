@@ -14,24 +14,36 @@
 // },8000)
 
 //closures
-function outerFunction(){
-    let outerVariable="Red"
-    function innerFunction(){
-        console.log(outerVariable)//The mechanism with which inner function is able to access the variables of outer environment is lexical scope
-    }
-    return innerFunction
-}
-let closFunc=outerFunction()//Here the execution of outerFunction is stopped , it only returns ineer func
-closFunc()// But still we can access the variables of outerFunc and this is closure
+// function outerFunction(){
+//     let outerVariable="Red"
+//     function innerFunction(){
+//         console.log(outerVariable)//The mechanism with which inner function is able to access the variables of outer environment is lexical scope
+//     }
+//     return innerFunction
+// }
+// let closFunc=outerFunction()//Here the execution of outerFunction is stopped , it only returns ineer func
+// closFunc()// But still we can access the variables of outerFunc and this is closure
 
-function counter(){
-    let count=0
-    function innerCount(){
-       count++;
-       console.log(count) 
+// function counter(){
+//     let count=0
+//     function innerCount(){
+//        count++;
+//        console.log(count) 
+//     }
+//     return innerCount
+// }
+
+// let myCounter=counter()
+// myCounter()
+// myCounter()//Able to remember the values of outer function from previous execution as well i.e. the count in previous execution 1
+
+//creating promises
+ let orderFood=new Promise((resolve,reject)=>{
+    let foodDelivered=true
+    if (foodDelivered){
+        resolve("Food Arrival Successfully")
+    }else{
+        reject("Sorry,food was not Delivered")
     }
-    return innerCount
-}
-let myCounter=counter()
-myCounter()
-myCounter()//Able to remember the values of outer function from previous execution as well i.e. the count in previous execution 1
+})
+console.log(orderFood)
