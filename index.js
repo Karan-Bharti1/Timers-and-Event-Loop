@@ -46,4 +46,6 @@
         reject("Sorry,food was not Delivered")
     }
 })
-console.log(orderFood)
+
+//handle Promises
+orderFood.then(message=>console.log(message)).catch(eror=>console.log(error))
