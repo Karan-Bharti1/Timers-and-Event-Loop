@@ -48,4 +48,11 @@
 })
 
 //handle Promises
-orderFood.then(message=>console.log(message)).catch(eror=>console.log(error))
+orderFood.then(message=>console.log(message)).catch(error=>console.log(error))
+
+fetch("https://jsonplaceholder.typicode.com/posts")
+.then(res=>res.json())//data being fetched is converted to json() format
+.then(data=>{
+    console.log(data)//res.json()  again returned a promise so we use .then again and now we can use this data
+})
+.catch(error=>console.log(error))
